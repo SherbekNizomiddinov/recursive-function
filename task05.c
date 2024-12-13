@@ -1,21 +1,19 @@
 #include <stdio.h>
 
-void func(int n, int m){
-
-    printf("%d ", n);
-    
-    if(n != m){
-        if(n < m)
-            func(n + 1, m);
-        else
-            func(n - 1, m);
+int fibonacci(int n){
+    if(n == 0){
+        return 0;
+    } else if (n == 1){
+        return 1;
     }
+    
+    return fibonacci(n - 1) + fibonacci(n - 2);
 }
-
 
 int main(){ 
 
-    func(5, 1);
+    printf("%d\n", fibonacci(6));
+    // 0 1 1 2 3 5 8 13
 
     return 0;
 }

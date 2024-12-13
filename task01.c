@@ -1,18 +1,18 @@
 #include <stdio.h>
 
-void func(int n){
+void func(int i){
+    
+    i--;
+    if(i % 2 == 0) printf("%d\n", i);
 
-    printf("%d-start\n", n);
+    if(i == 1) return;
 
-    if(n != 1)
-        func(n - 1);
-
-    printf("%d-end\n", n);
+    func(i - 1);
 }
 
-int main(){ 
+int main(){
 
-    func(5);
+    func(8);
 
     return 0;
 }
